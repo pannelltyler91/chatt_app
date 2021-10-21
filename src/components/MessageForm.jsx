@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { sendMessage, isTyping } from "react-chat-engine";
-import { SendOutlined, PictureOutlined } from "@ant-design/icons";
+import { SendOutlined, PictureOutlined, LogoutOutlined } from "@ant-design/icons";
 
 const MessageForm = (props) => {
   const [value, setValue] = useState("");
@@ -23,6 +23,12 @@ const MessageForm = (props) => {
   const _handleUpload = (e) => {
     sendMessage(creds, chatId, { files: e.target.files, text: '' });
   };
+  const _handleLogout = (e) => {
+      localStorage.removeItem('password')
+      localStorage.removeItem('username')
+      window.location.reload();
+    
+  };
 
   return (
     <div>
@@ -36,7 +42,7 @@ const MessageForm = (props) => {
         ></input>
         <label htmlFor="upload-button">
           <span className="image-button">
-            <PictureOutlined className="picture-icon" />
+            <PictureOutlined title='Upload image' className="picture-icon" />
           </span>
         </label>
         <input
@@ -46,9 +52,10 @@ const MessageForm = (props) => {
           style={{ display: "none" }}
           onChange={_handleUpload.bind(this)}
         ></input>
-        <button type="submit" className="send-button">
+        <button title='Send'type="submit" className="send-button">
           <SendOutlined className="send-icon" />
         </button>
+          <button title='Logout' className='logout' onClick={_handleLogout}><LogoutOutlined/></button>
       </form>
     </div>
   );

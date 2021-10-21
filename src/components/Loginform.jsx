@@ -27,7 +27,7 @@ const LoginForm = () => {
   return (
     <div className="wrapper">
       <div className="form">
-        <h1 className='title'>Chat Application</h1>
+        <h1 className='title'>깐부</h1>
         <form onSubmit={_handleSubmit}>
           <input
             type="text"
@@ -46,7 +46,7 @@ const LoginForm = () => {
             required
           />
           <div align="center">
-            <button type="submit" className="button">
+            <button type="submit" className="button" id='login-button'>
               <span>Start Chatting</span>
             </button>
           </div>
