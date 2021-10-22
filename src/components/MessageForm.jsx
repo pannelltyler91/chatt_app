@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { sendMessage, isTyping } from "react-chat-engine";
-import { SendOutlined, PictureOutlined, LogoutOutlined } from "@ant-design/icons";
+import { SendOutlined, PictureOutlined} from "@ant-design/icons";
 
 const MessageForm = (props) => {
   const [value, setValue] = useState("");
@@ -23,12 +23,7 @@ const MessageForm = (props) => {
   const _handleUpload = (e) => {
     sendMessage(creds, chatId, { files: e.target.files, text: '' });
   };
-  const _handleLogout = (e) => {
-      localStorage.removeItem('password')
-      localStorage.removeItem('username')
-      window.location.reload();
-    
-  };
+ 
 
   return (
     <div>

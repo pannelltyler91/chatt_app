@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const MyProfile = () => {
   const [currentUser, setcurrentUser] = useState("");
   const [users, setUsers] = useState([]);
-  const [currentUserId, setcurrentUserId] = useState("");
+  
 
   const _handleSubmit = (e)=>{
     e.preventDefault();
