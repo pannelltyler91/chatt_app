@@ -27,7 +27,7 @@ const LoginForm = () => {
   return (
     <div className="wrapper">
       <div className="form">
-        <h1 className='title'>깐부</h1>
+        <h1 className='title'>Hablamos</h1>
         <form onSubmit={_handleSubmit}>
           <input
             type="text"

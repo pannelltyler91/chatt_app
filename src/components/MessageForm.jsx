@@ -55,7 +55,7 @@ const MessageForm = (props) => {
         <button title='Send'type="submit" className="send-button">
           <SendOutlined className="send-icon" />
         </button>
-          <button title='Logout' className='logout' onClick={_handleLogout}><LogoutOutlined/></button>
+          
       </form>
     </div>
   );

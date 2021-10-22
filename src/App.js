@@ -1,25 +1,18 @@
-import { ChatEngine } from "react-chat-engine";
-import ChatFeed from "./components/ChatFeed";
+import {Switch,Route} from 'react-router-dom'
 import "./App.css";
-import LoginForm from "./components/Loginform";
-import MenuAppBar from "./components/Navbar";
+import Home from './components/Home';
+import MyProfile from './components/MyProfile'
 
 
-const App = (props) => {
-  if (!localStorage.getItem("username")) return <LoginForm />;
 
-
+const App = () => {
+  
   return (
-    <div>
-      <MenuAppBar />
-      <ChatEngine
-        height="93vh"
-        projectID="a98ac7a4-7643-4177-a6d3-5b14219429f2"
-        userName={localStorage.getItem("username")}
-        userSecret={localStorage.getItem("password")}
-        renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
-      />
-    </div>
+    <Switch>
+        <Route exact path='/' component={Home}/>
+        <Route path='/profile' component={MyProfile}/>
+    </Switch>
+     
   );
 };
 

@@ -1,6 +1,8 @@
 const TheirMessage = ({ lastMessage, message }) => {
   const isFirstMessageByUser =
     !lastMessage || lastMessage.sender.username !== message.sender.username;
+
+    
   return (
     <div className="message-row">
       {isFirstMessageByUser && (
@@ -16,6 +18,7 @@ const TheirMessage = ({ lastMessage, message }) => {
           className="message-image"
           style={{ marginLeft:isFirstMessageByUser ? '4px' : '48px' }}
         />
+        
       ) : (
         <div
           className="message"
@@ -24,9 +27,12 @@ const TheirMessage = ({ lastMessage, message }) => {
             backgroundColor: "#52B69A",
             color:'#184E77',
             fontWeight:'bold',
-            marginLeft:isFirstMessageByUser ? '4px' : '48px' 
+            marginLeft:isFirstMessageByUser ? '4px' : '48px',
+            
+            
           }}
         >
+            <h6>{message.sender.username}</h6>
           {message.text}
         </div>
       )}
